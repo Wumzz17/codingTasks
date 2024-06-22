@@ -1,0 +1,20 @@
+<!-- bulletin_app/templates/bulletin_app/post_detail.html -->
+{% extends "bulletin_app/base.html" %}
+{% load static %}
+
+{% block title %}{{ post.title }}{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'bulletin_app/css/style.css' %}">
+<div class="view-post-page">
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    <p><strong>Author:</strong> {{ post.author }}</p>
+    <p><strong>Published on:</strong> {{ post.created_at }}</p>
+    {% if perms.bulletin_app.change_post %}
+    <a class="edit-post-button" href="{% url 'post_update' post.pk %}">Edit Post</a>
+    {% endif %}
+    <!-- Add a link back to the list of posts -->
+    <a class="back-button" href="{% url 'post_list' %}">Back to Posts List</a>
+</div>
+{% endblock %}

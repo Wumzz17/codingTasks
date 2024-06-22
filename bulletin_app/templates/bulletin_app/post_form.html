@@ -1,0 +1,16 @@
+{% extends "bulletin_app/base.html" %}
+
+{% block title %}Add Blog Post{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'bulletin_app/css/style.css' %}">
+<div class="add-post-page">
+    <h1>Add a New Blog Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Post</button>
+        <a class="back-button" href="{% url 'post_list' %}">Cancel</a>
+    </form>
+</div>
+{% endblock %}
