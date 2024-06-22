@@ -1,1 +1,1 @@
-# codingTasks
+# The Bulletin Board app is a simple Django-based web application designed for creating, viewing, and managing blog posts. The app features a streamlined interface where users can view a list of all posts, access detailed views of individual posts, and create new posts if they have the appropriate permissions.
